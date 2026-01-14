@@ -1,0 +1,22 @@
+{
+  "total_frames": 6,
+  "accepted_frames": 1,
+  "rejected_frames": 5,
+  "acceptance_rate": 0.16666666666666666,
+  "gap_px_stats": {
+    "count": 1,
+    "mean": 11.0,
+    "median": 11.0,
+    "std": 0.0,
+    "min": 11.0,
+    "max": 11.0
+  },
+  "gap_mm_stats": {
+    "count": 1,
+    "mean": 1.045,
+    "median": 1.045,
+    "std": 0.0,
+    "min": 1.045,
+    "max": 1.045
+  }
+}
