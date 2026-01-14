@@ -1,0 +1,61 @@
+{
+  "source": {
+    "type": "captures",
+    "path": "mockup_dataset/captures",
+    "glob": "*.jpg",
+    "max_frames": 0,
+    "camera_index": 0
+  },
+  "roi": {
+    "enabled": true,
+    "x": 200,
+    "y": 80,
+    "w": 500,
+    "h": 300
+  },
+  "preprocess": {
+    "clahe_clip": 2.0,
+    "clahe_grid": [8, 8],
+    "blur_ksize": 3
+  },
+  "measurement": {
+    "n_scanlines": 80,
+    "scanline_y_min": 0.30,
+    "scanline_y_max": 0.90,
+    "min_gap_px": 2
+  },
+  "quality": {
+    "blur_min_var": 20.0,
+    "max_saturation_ratio": 0.03,
+    "min_valid_ratio": 0.4,
+    "min_edge_strength": 10.0
+  },
+  "scale": {
+    "mode": "fixed",
+    "mm_per_px": 0.095
+  },
+  
+  "segmentation": {
+  "enabled": true,
+  "method": "ml_onnx",
+  "model_path": "models/gap_unet.onnx",
+  "onnx_input_size": [256, 256],
+  "onnx_thresh": 0.5,
+  "component_filter_enabled": true,
+  "expected_gap_px_min": 10,
+  "expected_gap_px_max": 250,
+  "adaptive_block_size": 31,
+  "adaptive_C": 3,
+  "edge_top_k": 7,
+  "use_temporal_prior": true
+},
+
+  "output": {
+    "dir": "outputs",
+    "save_overlays": true,
+    "overlay_limit": 200
+  },
+  "debug": {
+    "show_windows": true
+  }
+}
