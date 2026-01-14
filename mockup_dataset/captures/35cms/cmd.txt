@@ -1,0 +1,41 @@
+python3 -m venv oakenvbest_data
+source oakenvbest_data/bin/activate
+
+pip install --upgrade pip
+pip install depthai opencv-python numpy
+
+
+20260113_024652 - 40 cm
+20260113_024736 - 35 cm
+20260113_024815 - 30 cm
+20260113_024913 - 26.5 cm 
+20260113_025001 -  24 cm 
+20260113_025105 - 19 cm 
+
+Image Capturing 
+We can add a IR dot projection device to add texture to pipes, in case to shiney pipes. 
+
+Gap calculation 
+1. Disparity Edges 
+    Stereo camera captures disparity - horizontal pixel shift between left and right images. 
+    Disparity Edges means depth discontinuities, when depth ubruptly chnages between neigbouing pixels. 
+    Why Disparity edge detection is better than RGB edge detection - because sensitive to shadows, paint, rust, shine, needs good contrast.
+
+    Disparity = Raw Geometry
+    Depth = post-processed and smoothed using Disparity
+    We get clearer edges in disparity
+
+    Pipleline
+    Stereo Pair
+   ↓
+    Disparity Map (raw)
+   ↓
+    Disparity Gradient / Edge Detection
+   ↓
+    Binary Edge Mask
+   ↓
+    Select vertical edges (pipe sides)
+   ↓
+    Measure pixel gap
+   ↓
+    Convert pixels → millimeters (using depth)

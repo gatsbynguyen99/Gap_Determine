@@ -1,0 +1,27 @@
+{
+  "timestamp": "20260113_231432",
+  "rgb_file": "rgb_20260113_231432.png",
+  "depth_raw_file": "depth_mm_20260113_231432.png",
+  "depth_vis_file": "depth_vis_20260113_231432.png",
+  "rgb_size_requested": [
+    640,
+    400
+  ],
+  "mono_size_requested": [
+    640,
+    480
+  ],
+  "stereo_output_size": [
+    640,
+    400
+  ],
+  "depth_units": "millimeters",
+  "depth_dtype": "uint16",
+  "depth_invalid_value": 0,
+  "depth_aligned_to": "CAM_A (RGB)",
+  "preview_colormap": "TURBO",
+  "preview_range_mm": [
+    150,
+    600
+  ]
+}
